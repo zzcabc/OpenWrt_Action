@@ -430,4 +430,4 @@ jobs:
           body: ${{ env.BUILD_DATE }}
           commit: ${{ env.CURRENT_BRANCH }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: ${{ FIRMWARE_PATH }}/*
+          artifacts: ${{ env.FIRMWARE_PATH }}/*
