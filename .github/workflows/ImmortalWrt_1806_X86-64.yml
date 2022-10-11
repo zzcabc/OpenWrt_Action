@@ -20,7 +20,7 @@ on:
 env:
   CONFIG_FILE: config/immortalwrt/1806.config
   SOURCE_URL: https://github.com/immortalwrt/immortalwrt
-  SOURCE_BRANCH: openwrt-1806-k5.4
+  SOURCE_BRANCH: openwrt-18.06-k5.4
   DIY1_SH: script/immortalwrt/diy1.sh
   DIY2_SH: script/immortalwrt/diy2.sh
   COMMON_SH: script/common.sh
