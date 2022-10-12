@@ -399,7 +399,6 @@ jobs:
           export BUILD_DATE=$(date +"%Y-%m-%d")
           echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
           mkdir -p Packages
-          cp $OPENWRT_ROOT_PATH/.config build.config
           mv -f $OPENWRT_ROOT_PATH/bin/packages/*/*/*.ipk Packages
           mv -f $OPENWRT_ROOT_PATH/bin/targets/*/*/packages/*.ipk Packages
           tar -zcvf Packages.tar.gz Packages && rm -rf Packages
