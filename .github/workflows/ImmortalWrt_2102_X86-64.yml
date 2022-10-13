@@ -398,11 +398,6 @@ jobs:
         run: |
           export BUILD_DATE=$(date +"%Y-%m-%d")
           echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
-          mkdir -p Packages
-          mv -f $OPENWRT_ROOT_PATH/bin/packages/*/*/*.ipk Packages
-          mv -f $OPENWRT_ROOT_PATH/bin/targets/*/*/packages/*.ipk Packages
-          tar -zcvf Packages.tar.gz Packages && rm -rf Packages
-          mv Package.tar.gz $OPENWRT_ROOT_PATH/bin/targets/$DEVICE_TARGET/$DEVICE_SUBTARGET/Package.tar.gz
           cd $OPENWRT_ROOT_PATH/bin/targets/$DEVICE_TARGET/$DEVICE_SUBTARGET
           echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
           rm -rf packages
