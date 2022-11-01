@@ -237,6 +237,6 @@ config config_subscribe
 	option sub_convert '1'
 	option address ''
 	option template '0'
-	option custom_template_url 'https://github.com/zzcabc/Rules/blob/master/MyConvert/MyRules.ini'
+	option custom_template_url 'https://github.com/zzcabc/Rules/raw/master/MyConvert/MyRules.ini'
 	option convert_address 'https://v.id9.cc/sub'
 
