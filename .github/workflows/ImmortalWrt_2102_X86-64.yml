@@ -65,7 +65,7 @@ jobs:
           git clone $SOURCE_URL -b $SOURCE_BRANCH workspace/openwrt
           cd workspace/openwrt
           echo "OPENWRT_ROOT_PATH=$PWD" >> $GITHUB_ENV
-          echo "OPENWRT_ROOT_PATH=$(echo $OPENWRT_ROOT_PATH)" >> $GITHUB_OUTPUT
+          echo "OPENWRT_ROOT_PATH=$(echo $PWD)" >> $GITHUB_OUTPUT
 
       - name: Generate Toolchain Config
         run: |
@@ -271,6 +271,8 @@ jobs:
           sudo mount -o loop $TOOLCHAIN_IMAGE.img openwrt-ro
           sudo mount -t overlay overlay -o lowerdir=openwrt-ro,upperdir=overlay,workdir=workdir openwrt
           cd $OPENWRT_ROOT_PATH
+          pwd
+          ls
           git pull
 
       - name: Prepare Toolchain Image Form Releases
