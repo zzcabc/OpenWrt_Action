@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build ImmortalWrt18.06 X86_64
+name: Build Lede X86_64
 
 on:
   repository_dispatch:
@@ -18,11 +18,11 @@ on:
         default: 'false'
 
 env:
-  CONFIG_FILE: config/immortalwrt/1806.config
-  SOURCE_URL: https://github.com/immortalwrt/immortalwrt
-  SOURCE_BRANCH: openwrt-18.06-k5.4
-  DIY1_SH: script/immortalwrt/diy1.sh
-  DIY2_SH: script/immortalwrt/diy2.sh
+  CONFIG_FILE: config/lede/.config
+  SOURCE_URL: https://github.com/coolsnowwolf/lede
+  SOURCE_BRANCH: master
+  DIY1_SH: script/lede/diy1.sh
+  DIY2_SH: script/lede/diy2.sh
   COMMON_SH: script/common.sh
   TOOLCHAIN_TAG: toolchain
   TOOLCHAIN_RELEASE_UPLOAD: true
@@ -413,7 +413,7 @@ jobs:
         uses: mknejp/delete-release-assets@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-1806
+          tag: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-Lede
           fail-if-no-assets: false
           fail-if-no-release: false
           assets: "*"
@@ -422,10 +422,10 @@ jobs:
         uses: ncipollo/release-action@v1.8.0
         if: env.FIRMWARE_RELEASE_UPLOAD == 'true'
         with:
-          name: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-1806
+          name: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-Lede
           allowUpdates: true
           replacesArtifacts: true
-          tag: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-1806
+          tag: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-Lede
           body: ${{ env.BUILD_DATE }}
           commit: ${{ env.CURRENT_BRANCH }}
           token: ${{ secrets.GITHUB_TOKEN }}
