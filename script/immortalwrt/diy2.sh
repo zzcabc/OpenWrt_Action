@@ -38,12 +38,8 @@ COUNTRY_LITE_URL=https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/re
 wget -qO- $COUNTRY_LITE_URL > files/etc/openclash/Country.mmdb
 # wget -qO- $COUNTRY_FULL_URL > files/etc/openclash/Country.mmdb
 
-chmod +r files/etc/openclash/Country.mmdb
-
 # meta可能要GeoIP.dat 和 GeoSite.dat
 GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
 GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
 wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
 wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
-
-chmod +r files/etc/openclash/*.dat
