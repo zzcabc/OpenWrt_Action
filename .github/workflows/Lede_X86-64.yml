@@ -290,11 +290,18 @@ jobs:
           cd $OPENWRT_ROOT_PATH
           git pull
 
+      # - name: Install Feeds
+      #   run: |
+      #     chmod +x $DIY1_SH
+      #     cd $OPENWRT_ROOT_PATH
+      #     $GITHUB_WORKSPACE/$DIY1_SH
+      #     ./scripts/feeds update -a
+      #     ./scripts/feeds install -a
+
       - name: Install Feeds
         run: |
           chmod +x $DIY1_SH
           cd $OPENWRT_ROOT_PATH
-          $GITHUB_WORKSPACE/$DIY1_SH
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
