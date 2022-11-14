@@ -271,8 +271,6 @@ jobs:
           sudo mount -o loop $TOOLCHAIN_IMAGE.img openwrt-ro
           sudo mount -t overlay overlay -o lowerdir=openwrt-ro,upperdir=overlay,workdir=workdir openwrt
           cd $OPENWRT_ROOT_PATH
-          pwd
-          ls
           git pull
 
       - name: Prepare Toolchain Image Form Releases
@@ -290,17 +288,8 @@ jobs:
           cd $OPENWRT_ROOT_PATH
           git pull
 
-      # - name: Install Feeds
-      #   run: |
-      #     chmod +x $DIY1_SH
-      #     cd $OPENWRT_ROOT_PATH
-      #     $GITHUB_WORKSPACE/$DIY1_SH
-      #     ./scripts/feeds update -a
-      #     ./scripts/feeds install -a
-
       - name: Install Feeds
         run: |
-          chmod +x $DIY1_SH
           cd $OPENWRT_ROOT_PATH
           ./scripts/feeds update -a
           ./scripts/feeds install -a
@@ -312,7 +301,6 @@ jobs:
           cd $OPENWRT_ROOT_PATH
           chmod +x $GITHUB_WORKSPACE/$DIY2_SH
           chmod +x $GITHUB_WORKSPACE/$COMMON_SH
-          ls
           $GITHUB_WORKSPACE/$DIY2_SH
           $GITHUB_WORKSPACE/$COMMON_SH
           make defconfig
