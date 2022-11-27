@@ -10,7 +10,6 @@ config dnsmasq
 	option authoritative '1'
 	option readethers '1'
 	option leasefile '/tmp/dhcp.leases'
-	option nonwildcard '1'
 	option localservice '1'
 	option dns_redirect '1'
 	option ednspacket_max '1232'
@@ -20,6 +19,7 @@ config dnsmasq
 	option sequential_ip '1'
 	option allservers '1'
 	option mini_ttl '0'
+	list server '127.0.0.1#7874'
 	option noresolv '1'
 
 config dhcp 'lan'
@@ -27,9 +27,8 @@ config dhcp 'lan'
 	option start '100'
 	option limit '150'
 	option leasetime '12h'
-	option ra_slaac '1'
-	list ra_flags 'managed-config'
-	list ra_flags 'other-config'
+	option ra_management '1'
+	list ra_flags 'none'
 
 config dhcp 'wan'
 	option interface 'wan'
@@ -40,4 +39,18 @@ config odhcpd 'odhcpd'
 	option leasefile '/tmp/hosts/odhcpd'
 	option leasetrigger '/usr/sbin/odhcpd-update'
 	option loglevel '4'
+
+config host
+	option name 'XBOX'
+	option dns '1'
+	option mac 'cc:60:c8:22:11:37'
+	option ip '10.10.10.101'
+	option leasetime 'infinite'
+
+config host
+	option name 'AX5400Pro'
+	option dns '1'
+	option mac '74:6F:88:7F:F4:14'
+	option ip '10.10.10.100'
+	option leasetime 'infinite'
 
