@@ -84,6 +84,22 @@ config server
 config server
 	option enabled '1'
 	option name 'AliDNS5'
+	option ip '2400:3200::1'
+	option type 'udp'
+	option server_group 'cn'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name 'AliDNS6'
+	option ip '2400:3200:baba::1'
+	option type 'udp'
+	option server_group 'cn'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name 'AliDNS7'
 	option ip 'https://dns.alidns.com/dns-query'
 	option type 'https'
 	option server_group 'cn'
@@ -91,7 +107,23 @@ config server
 
 config server
 	option enabled '1'
-	option name 'AliDNS6'
+	option name 'AliDNS8'
+	option ip 'https://2400:3200::1/dns-query'
+	option type 'https'
+	option server_group 'cn'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name 'AliDNS9'
+	option ip 'https://2400:3200:baba::1/dns-query'
+	option type 'https'
+	option server_group 'cn'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name 'AliDNS10'
 	option ip 'dns.alidns.com'
 	option type 'tls'
 	option server_group 'cn'
@@ -99,8 +131,16 @@ config server
 
 config server
 	option enabled '1'
-	option name 'BaiduDNS'
+	option name 'BaiduDNS1'
 	option ip '180.76.76.76'
+	option type 'udp'
+	option server_group 'cn'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name 'BaiduDNS2'
+	option ip '2400:da00::6666'
 	option type 'udp'
 	option server_group 'cn'
 	option blacklist_ip '0'
@@ -155,9 +195,17 @@ config server
 
 config server
 	option enabled '1'
-	option name 'TencentDNS6'
+	option name 'TencentDNS7'
 	option ip 'https://120.53.53.53/dns-query'
 	option type 'https'
+	option server_group 'cn'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name 'TencentDNS8'
+	option ip '2402:4e00::'
+	option type 'udp'
 	option server_group 'cn'
 	option blacklist_ip '0'
 
@@ -173,6 +221,22 @@ config server
 	option enabled '1'
 	option name 'CNNICSDNS2'
 	option ip '210.2.4.8'
+	option type 'udp'
+	option server_group 'cn'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name 'CNNICSDNS3'
+	option ip '2001:dc7:1000::1'
+	option type 'udp'
+	option server_group 'cn'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option name '中科DNS3'
+	option ip '2001:cc0:2fff:1::6666'
 	option type 'udp'
 	option server_group 'cn'
 	option blacklist_ip '0'
