@@ -176,7 +176,7 @@ jobs:
 
       - name: Upload Toolchain Image To Release
         if: env.TOOLCHAIN_RELEASE_UPLOAD == 'true' && steps.hash.outputs.REBUILD_TOOLCHAIN == 'true'
-        uses: ncipollo/release-action@v1.8.0
+        uses: ncipollo/release-action@main
         with:
           name: toolchain-image
           allowUpdates: true
@@ -418,7 +418,7 @@ jobs:
           assets: "*"
 
       - name: Deploy Files To Release
-        uses: ncipollo/release-action@v1.8.0
+        uses: ncipollo/release-action@main
         if: env.FIRMWARE_RELEASE_UPLOAD == 'true'
         with:
           name: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-1806
