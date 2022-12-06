@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build ImmortalWrt21.02 X86_64
+name: Build ImmortalWrt21.02 X86_64_C
 
 on:
   repository_dispatch:
@@ -18,7 +18,7 @@ on:
         default: 'false'
 
 env:
-  CONFIG_FILE: config/immortalwrt/2102.config
+  CONFIG_FILE: config/immortalwrt/2102_FAST_CLASSIFIER.config
   SOURCE_URL: https://github.com/immortalwrt/immortalwrt
   SOURCE_BRANCH: openwrt-21.02
   DIY1_SH: script/immortalwrt/diy1.sh
@@ -412,7 +412,7 @@ jobs:
         uses: mknejp/delete-release-assets@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-2102
+          tag: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-2102-C
           fail-if-no-assets: false
           fail-if-no-release: false
           assets: "*"
@@ -421,10 +421,10 @@ jobs:
         uses: ncipollo/release-action@main
         if: env.FIRMWARE_RELEASE_UPLOAD == 'true'
         with:
-          name: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-2102
+          name: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-2102-C
           allowUpdates: true
           replacesArtifacts: true
-          tag: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-2102
+          tag: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-2102-C
           body: ${{ env.BUILD_DATE }}
           commit: ${{ env.CURRENT_BRANCH }}
           token: ${{ secrets.GITHUB_TOKEN }}
