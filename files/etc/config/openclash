@@ -2,22 +2,22 @@
 config dns_servers
 	option enabled '1'
 	option group 'nameserver'
+	option type 'udp'
+	option ip '127.0.0.1'
 	option port '6053'
 	option interface 'Disable'
-	option specific_group 'Disable'
-	option ip '10.10.10.10'
-	option type 'udp'
 	option node_resolve '0'
+	option specific_group 'Disable'
 
 config dns_servers
 	option enabled '1'
+	option type 'udp'
 	option group 'fallback'
+	option ip '127.0.0.1'
 	option port '5335'
 	option interface 'Disable'
-	option specific_group 'Disable'
-	option ip '10.10.10.10'
-	option type 'udp'
 	option node_resolve '0'
+	option specific_group 'Disable'
 
 config dns_servers
 	option group 'nameserver'
@@ -238,11 +238,6 @@ config openclash 'config'
 	option dnsmasq_resolvfile '/tmp/resolv.conf.d/resolv.conf.auto'
 	option redirect_dns '1'
 	option cachesize_dns '1'
-
-config authentication
-	option enabled '1'
-	option username 'Clash'
-	option password 'WgKiWN5z'
 
 config config_subscribe
 	option enabled '1'
