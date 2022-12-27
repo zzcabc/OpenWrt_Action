@@ -1,0 +1,12 @@
+
+config queue 'eth1'
+	option interface 'eth1'
+	option qdisc 'cake'
+	option script 'piece_of_cake.qos'
+	option linklayer 'none'
+	option enabled '1'
+	option download '247091'
+	option upload '51558'
+	option debug_logging '1'
+	option verbosity '5'
+
