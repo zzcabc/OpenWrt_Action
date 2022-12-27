@@ -18,7 +18,7 @@ on:
         default: 'false'
 
 env:
-  CONFIG_FILE: config/immortalwrt/1806.config
+  CONFIG_FILE: config/immortalwrt/1806/.config
   SOURCE_URL: https://github.com/immortalwrt/immortalwrt
   SOURCE_BRANCH: openwrt-18.06-k5.4
   DIY1_SH: script/immortalwrt/diy1.sh

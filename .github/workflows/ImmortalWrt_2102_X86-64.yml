@@ -18,7 +18,7 @@ on:
         default: 'false'
 
 env:
-  CONFIG_FILE: config/immortalwrt/2102.config
+  CONFIG_FILE: config/immortalwrt/2102/.config
   SOURCE_URL: https://github.com/immortalwrt/immortalwrt
   SOURCE_BRANCH: openwrt-21.02
   DIY1_SH: script/immortalwrt/diy1.sh
