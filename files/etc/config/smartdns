@@ -18,7 +18,6 @@ config smartdns
 	option rr_ttl_reply_max '60'
 	option seconddns_tcp_server '1'
 	option seconddns_force_aaaa_soa '0'
-	option coredump '0'
 	option seconddns_enabled '1'
 	option seconddns_no_speed_check '1'
 	option seconddns_no_rule_addr '1'
@@ -30,6 +29,9 @@ config smartdns
 	option enabled '1'
 	option cache_size '50000000'
 	option auto_set_dnsmasq '0'
+	option speed_check_mode 'tcp:443,tcp:80,ping'
+	option enable_auto_update '0'
+	option coredump '1'
 	option old_port '6053'
 	option old_enabled '1'
 	option old_auto_set_dnsmasq '0'
@@ -456,4 +458,8 @@ config server
 	option server_group 'ocean'
 	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+
+config domain-rule
+	option no_speed_check '0'
+	option force_aaaa_soa '0'
 
