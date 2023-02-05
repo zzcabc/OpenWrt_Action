@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build ImmortalWrt18.06 X86_64
+name: Build ImmortalWrt X86_64
 
 on:
   repository_dispatch:
@@ -18,9 +18,9 @@ on:
         default: 'false'
 
 env:
-  CONFIG_FILE: config/immortalwrt/1806/.config
+  CONFIG_FILE: config/immortalwrt/master/.config
   SOURCE_URL: https://github.com/immortalwrt/immortalwrt
-  SOURCE_BRANCH: openwrt-18.06-k5.4
+  SOURCE_BRANCH: master
   DIY1_SH: script/immortalwrt/diy1.sh
   DIY2_SH: script/immortalwrt/diy2.sh
   COMMON_SH: script/common.sh
