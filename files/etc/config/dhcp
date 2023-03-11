@@ -28,10 +28,9 @@ config dhcp 'lan'
 	option leasetime '12h'
 	option ra_management '1'
 	list ra_flags 'none'
-
-config dhcp 'wan'
-	option interface 'wan'
-	option ignore '1'
+	option ra 'hybrid'
+	option ndp 'hybrid'
+	option dhcpv6 'hybrid'
 
 config odhcpd 'odhcpd'
 	option maindhcp '0'

@@ -462,4 +462,5 @@ config server
 config domain-rule
 	option no_speed_check '0'
 	option force_aaaa_soa '0'
+	option server_group 'cn'
 

@@ -100,7 +100,6 @@ fake-ip-filter:
   - "*.finalfantasyxiv.com"
   - "*.ffxiv.com"
   - "+.*"
-# fake-ip仅有
 fallback-filter:
   geoip: true
   geoip-code: CN
