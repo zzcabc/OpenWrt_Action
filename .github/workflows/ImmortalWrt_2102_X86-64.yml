@@ -11,7 +11,7 @@ name: Build ImmortalWrt21.02 X86_64
 on:
   repository_dispatch:
   schedule:
-    - cron: "0 16 * * 1"
+    - cron: "0 16 * * *"
   workflow_dispatch:
     inputs:
       ssh:
