@@ -37,7 +37,6 @@ config odhcpd 'odhcpd'
 	option leasefile '/tmp/hosts/odhcpd'
 	option leasetrigger '/usr/sbin/odhcpd-update'
 	option loglevel '4'
-
 config host
 	option name 'XBOX'
 	option dns '1'
@@ -50,5 +49,26 @@ config host
 	option dns '1'
 	option mac '74:6F:88:7F:F4:14'
 	option ip '10.10.10.100'
+	option leasetime 'infinite'
+
+config host
+	option name 'Power-OpenWrt'
+	option dns '1'
+	option ip '10.10.10.21'
+	option leasetime 'infinite'
+	option mac '68:AB:BC:EC:CF:B6'
+
+config host
+	option dns '1'
+	option mac '68:AB:BC:E8:DA:6C'
+	option ip '10.10.10.22'
+	option leasetime 'infinite'
+	option name 'Power-HotWater'
+
+config host
+	option name 'Power-Air'
+	option dns '1'
+	option mac 'CC:B5:D1:3D:45:A8'
+	option ip '10.10.10.23'
 	option leasetime 'infinite'
 
