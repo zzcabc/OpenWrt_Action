@@ -82,16 +82,18 @@ config host
 	option leasetime 'infinite'
 
 config host
+	option name 'Power-Flash'
+	option dns '1'
+	option mac '68:AB:BC:E5:89:3C'
+	option ip '10.10.10.25'
+	option leasetime 'infinite'
+
+config host
 	option name 'Power-Air'
 	option dns '1'
 	option mac 'CC:B5:D1:3D:45:A8'
 	option leasetime 'infinite'
 	option ip '10.10.10.29'
 
-config host
-	option name 'Power-Flash'
-	option dns '1'
-	option mac '68:AB:BC:E5:89:3C'
-	option ip '10.10.10.25'
-	option leasetime 'infinite'
+
 
