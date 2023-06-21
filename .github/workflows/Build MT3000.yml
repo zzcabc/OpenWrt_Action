@@ -63,8 +63,8 @@ jobs:
         id: clone
         run: |
           df -hT $PWD
-          git --global user.email "zhaocheng990105@gmail.com"
-          git --global user.name "zhaocheng"
+          git config --global user.email "zhaocheng990105@gmail.com"
+          git config --global user.name "zhaocheng"
           git clone $SOURCE_URL workspace/gl-infra-builder
           cd workspace/gl-infra-builder
           git checkout v4.2.0_mt3000_release1
