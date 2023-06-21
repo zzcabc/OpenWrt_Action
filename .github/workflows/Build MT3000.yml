@@ -22,9 +22,6 @@ on:
 env:
   CONFIG_FILE: config/gl-inet/.config
   SOURCE_URL: https://github.com/gl-inet/gl-infra-builder.git
-  DIY1_SH: script/immortalwrt/diy1.sh
-  DIY2_SH: script/immortalwrt/diy2.sh
-  COMMON_SH: script/common.sh
   TOOLCHAIN_TAG: toolchain
   TOOLCHAIN_RELEASE_UPLOAD: true
   FIRMWARE_RELEASE_UPLOAD: true
@@ -69,7 +66,8 @@ jobs:
           cd workspace/gl-infra-builder
           git checkout v4.2.0_mt3000_release1
           python3 setup.py -c configs/config-mt798x-7.6.6.1.yml
-          cd mt7981
+          mv mt7981 ../openwrt
+          cd ../openwrt
           echo "OPENWRT_ROOT_PATH=$PWD" >> $GITHUB_ENV
           echo "OPENWRT_ROOT_PATH=$(echo $PWD)" >> $GITHUB_OUTPUT
 
