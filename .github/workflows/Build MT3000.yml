@@ -251,6 +251,8 @@ jobs:
       - name: Checkout
         run: |
           cd $GITHUB_WORKSPACE
+          git config --global user.email "zhaocheng990105@gmail.com"
+          git config --global user.name "zhaocheng"
           git init
           git remote add origin https://github.com/$GITHUB_REPOSITORY
           git fetch
