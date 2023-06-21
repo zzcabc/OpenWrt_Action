@@ -205,7 +205,7 @@ jobs:
           path: ${{ env.OPENWRT_ROOT_PATH }}/${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}.zip
 
   Upload:
-    needs: [Build, Toolchain]
+    needs: [Toolchain]
     runs-on: ubuntu-20.04
     steps:
 
