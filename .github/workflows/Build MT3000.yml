@@ -21,7 +21,7 @@ on:
 
 env:
   CONFIG_FILE: config/gl-inet/.config
-  SOURCE_URL: https://github.com/gl-inet/gl-infra-builder
+  SOURCE_URL: https://github.com/gl-inet/gl-infra-builder.git
   DIY1_SH: script/immortalwrt/diy1.sh
   DIY2_SH: script/immortalwrt/diy2.sh
   COMMON_SH: script/common.sh
@@ -63,6 +63,8 @@ jobs:
         id: clone
         run: |
           df -hT $PWD
+          git --global user.email "zhaocheng990105@gmail.com"
+          git --global user.name "zhaocheng"
           git clone $SOURCE_URL workspace/gl-infra-builder
           cd workspace/gl-infra-builder
           git checkout v4.2.0_mt3000_release1
@@ -130,6 +132,7 @@ jobs:
           cd $OPENWRT_ROOT_PATH
           sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
           sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+          ./scripts/gen_config.py target_mt7981_gl-mt3000 luci
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           make defconfig
@@ -295,6 +298,9 @@ jobs:
       - name: Install Feeds
         run: |
           cd $OPENWRT_ROOT_PATH
+          sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+          sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+          ./scripts/gen_config.py target_mt7981_gl-mt3000 luci
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
@@ -303,10 +309,7 @@ jobs:
           [ -e files ] && mv files $OPENWRT_ROOT_PATH/files
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_ROOT_PATH/.config
           cd $OPENWRT_ROOT_PATH
-          chmod +x $GITHUB_WORKSPACE/$DIY2_SH
-          chmod +x $GITHUB_WORKSPACE/$COMMON_SH
-          $GITHUB_WORKSPACE/$DIY2_SH
-          $GITHUB_WORKSPACE/$COMMON_SH
+
           make defconfig
 
       - name: Download DL Package
