@@ -12,6 +12,8 @@ name: Build MT3000
 
 on:
   repository_dispatch:
+  schedule:
+    - cron: "0 16 * * *"
   workflow_dispatch:
     inputs:
       ssh:
