@@ -44,13 +44,11 @@ jobs:
           sudo -E apt-get -qq clean
           sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           docker image prune -a -f
-          mkdir -p workspace
 
       - name: Checkout
         uses: actions/checkout@main
 
       - name: Clone source code
-        working-directory: /workdir
         run: |
           df -hT $PWD
           git config --global user.email "zhaocheng990105@gmail.com"
