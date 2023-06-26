@@ -135,12 +135,6 @@ jobs:
           name: bin-archive
           path: ${{ env.OPENWRT_ROOT_PATH }}/${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}.zip
 
-      - name: Download Bin Archive
-        uses: actions/download-artifact@v3
-        with:
-          name: bin-archive
-          path: ${{ env.OPENWRT_ROOT_PATH }}
-
       - name: Decompress Bin Archive
         run: |
           cd $OPENWRT_ROOT_PATH
