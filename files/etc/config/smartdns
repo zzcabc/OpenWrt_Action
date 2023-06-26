@@ -10,14 +10,13 @@ config smartdns
 	option prefetch_domain '1'
 	option serve_expired '1'
 	option resolve_local_hostnames '1'
-	option force_aaaa_soa '0'
 	option force_https_soa '0'
 	option rr_ttl '86400'
 	option rr_ttl_min '3600'
 	option rr_ttl_max '86400'
 	option rr_ttl_reply_max '60'
 	option seconddns_tcp_server '1'
-	option seconddns_force_aaaa_soa '0'
+	option seconddns_force_aaaa_soa '1'
 	option seconddns_enabled '1'
 	option seconddns_no_speed_check '1'
 	option seconddns_no_rule_addr '1'
@@ -30,8 +29,10 @@ config smartdns
 	option cache_size '50000000'
 	option auto_set_dnsmasq '0'
 	option speed_check_mode 'tcp:443,tcp:80,ping'
-	option enable_auto_update '0'
 	option coredump '1'
+	option bind_device '1'
+	option cache_persist '1'
+	option log_level 'debug'
 	option old_port '6053'
 	option old_enabled '1'
 	option old_auto_set_dnsmasq '0'
@@ -294,8 +295,8 @@ config server
 	option ip '8.8.8.8'
 	option type 'tcp'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -303,8 +304,8 @@ config server
 	option ip '8.8.4.4'
 	option type 'tcp'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -312,8 +313,8 @@ config server
 	option ip 'https://dns.google/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -321,8 +322,8 @@ config server
 	option ip 'dns.google'
 	option type 'tls'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -330,8 +331,8 @@ config server
 	option ip 'https://dns.quad9.net/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -339,8 +340,8 @@ config server
 	option ip 'https://doh.opendns.com/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -348,8 +349,8 @@ config server
 	option ip 'https://doh.opendns.com/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -357,8 +358,8 @@ config server
 	option ip 'https://1.1.1.1/dns-query'
 	option type 'tcp'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -366,8 +367,8 @@ config server
 	option ip 'https://1.0.0.1/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -375,8 +376,8 @@ config server
 	option ip 'https://cloudflare-dns.com/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -384,8 +385,8 @@ config server
 	option ip '1dot1dot1dot1.cloudflare-dns.com'
 	option type 'tls'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -402,8 +403,8 @@ config server
 	option ip 'https://dns.adguard.com/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -420,8 +421,8 @@ config server
 	option ip 'https://doh.dns.sb/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -438,8 +439,8 @@ config server
 	option ip 'dot.sb'
 	option type 'tls'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -447,8 +448,8 @@ config server
 	option ip '84.200.69.80'
 	option type 'tcp'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -456,11 +457,14 @@ config server
 	option ip '84.200.70.40'
 	option type 'tcp'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config domain-rule
-	option no_speed_check '0'
-	option force_aaaa_soa '0'
 	option server_group 'cn'
+
+config download-file
+	option name 'accelerated-domains.china.conf'
+	option url 'https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf'
+	option type 'list'
 

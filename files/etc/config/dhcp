@@ -14,12 +14,12 @@ config dnsmasq
 	option dns_redirect '1'
 	option ednspacket_max '1232'
 	option localuse '1'
-	option cachesize '0'
 	option filter_aaaa '0'
 	option sequential_ip '1'
 	option allservers '1'
 	option mini_ttl '0'
 	option noresolv '1'
+	option cachesize '0'
 
 config dhcp 'lan'
 	option interface 'lan'
@@ -38,7 +38,6 @@ config odhcpd 'odhcpd'
 	option leasetrigger '/usr/sbin/odhcpd-update'
 	option loglevel '4'
 
-	
 config host
 	option name 'XBOX'
 	option dns '1'
@@ -94,6 +93,4 @@ config host
 	option mac 'CC:B5:D1:3D:45:A8'
 	option leasetime 'infinite'
 	option ip '10.10.10.29'
-
-
 
