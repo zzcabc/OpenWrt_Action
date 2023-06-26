@@ -63,6 +63,7 @@ jobs:
 
       - name: Install feeds
         run: |
+          cd $OPENWRT_ROOT_PATH && sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
           cd $OPENWRT_ROOT_PATH && ./scripts/feeds update -a
           cd $OPENWRT_ROOT_PATH && ./scripts/feeds install -a
 
