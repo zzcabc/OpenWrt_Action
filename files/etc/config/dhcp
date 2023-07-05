@@ -14,7 +14,6 @@ config dnsmasq
 	option dns_redirect '1'
 	option ednspacket_max '1232'
 	option localuse '1'
-	option filter_aaaa '0'
 	option sequential_ip '1'
 	option allservers '1'
 	option mini_ttl '0'
@@ -42,27 +41,27 @@ config host
 	option name 'XBOX'
 	option dns '1'
 	option mac 'cc:60:c8:22:11:37'
-	option ip '10.10.10.101'
+	option ip '10.0.0.101'
 	option leasetime 'infinite'
 
 config host
 	option name 'AX5400Pro'
 	option dns '1'
 	option mac '74:6F:88:7F:F4:14'
-	option ip '10.10.10.100'
+	option ip '10.0.0.100'
 	option leasetime 'infinite'
 
 config host
 	option name 'Power-OpenWrt'
 	option dns '1'
-	option ip '10.10.10.21'
+	option ip '10.0.0.21'
 	option leasetime 'infinite'
 	option mac '68:AB:BC:EC:CF:B6'
 
 config host
 	option dns '1'
 	option mac '68:AB:BC:E8:DA:6C'
-	option ip '10.10.10.22'
+	option ip '10.0.0.22'
 	option leasetime 'infinite'
 	option name 'Power-HotWater'
 
@@ -70,21 +69,21 @@ config host
 	option name 'Power-PC'
 	option dns '1'
 	option mac '64:9E:31:9C:4C:70'
-	option ip '10.10.10.23'
+	option ip '10.0.0.23'
 	option leasetime 'infinite'
 
 config host
 	option name 'Power-Ice'
 	option dns '1'
 	option mac '64:9E:31:99:68:0E'
-	option ip '10.10.10.24'
+	option ip '10.0.0.24'
 	option leasetime 'infinite'
 
 config host
 	option name 'Power-Flash'
 	option dns '1'
 	option mac '68:AB:BC:E5:89:3C'
-	option ip '10.10.10.25'
+	option ip '10.0.0.25'
 	option leasetime 'infinite'
 
 config host
@@ -92,5 +91,5 @@ config host
 	option dns '1'
 	option mac 'CC:B5:D1:3D:45:A8'
 	option leasetime 'infinite'
-	option ip '10.10.10.29'
+	option ip '10.0.0.26'
 
