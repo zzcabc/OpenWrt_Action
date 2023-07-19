@@ -5,7 +5,7 @@
 # git clone --depth https://github.com/vernesong/OpenClash.git feeds/luci/applications/luci-app-openclash
 
 # 将192.168.1.1改为10.0.0.1
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.10/g' package/base-files/files/bin/config_generate
 
 # 预置openclash内核
 mkdir -p files/etc/openclash/core
