@@ -26,6 +26,7 @@ env:
   DIY1_SH: script/immortalwrt/diy1.sh
   DIY2_SH: script/immortalwrt/diy2.sh
   COMMON_SH: script/common.sh
+  INIT_SH: script/init-setting.sh
   TOOLCHAIN_TAG: toolchain
   TOOLCHAIN_RELEASE_UPLOAD: true
   FIRMWARE_RELEASE_UPLOAD: true
