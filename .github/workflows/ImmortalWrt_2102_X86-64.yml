@@ -64,6 +64,7 @@ jobs:
         id: clone
         run: |
           df -hT $PWD
+          ls
           git clone $SOURCE_URL -b $SOURCE_BRANCH workspace/openwrt
           cd workspace/openwrt
           echo "OPENWRT_ROOT_PATH=$PWD" >> $GITHUB_ENV
