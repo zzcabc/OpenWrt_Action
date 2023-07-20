@@ -65,6 +65,8 @@ jobs:
         run: |
           df -hT $PWD
           ls
+          pwd
+          echo $GITHUB_WORKSPACE
           git clone $SOURCE_URL -b $SOURCE_BRANCH workspace/openwrt
           cd workspace/openwrt
           echo "OPENWRT_ROOT_PATH=$PWD" >> $GITHUB_ENV
@@ -330,7 +332,7 @@ jobs:
         run: |
           cd $OPENWRT_ROOT_PATH
           mkdir -p files/etc/uci-defaults/
-          cp $GITHUB_WORKSPACE/scripts/init-setting.sh files/etc/uci-defaults/99-init-settings
+          cp $GITHUB_WORKSPACE/script/init-setting.sh files/etc/uci-defaults/99-init-settings
           chmod +x files/etc/uci-defaults/99-init-settings
           make package/install -j$(nproc) || make package/install -j1 V=s
           make target/install -j$(nproc) || make target/install -j1 V=s
