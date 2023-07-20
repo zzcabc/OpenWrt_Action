@@ -23,23 +23,23 @@ uci commit upnpd
 
 
 # 设置lan的网关和dns
-uci set network.lan.gateway='10.0.0.1'
-uci add_list network.lan.dns='10.0.0.1'
-uci commit network
+# uci set network.lan.gateway='10.0.0.1'
+# uci add_list network.lan.dns='10.0.0.1'
+# uci commit network
 
 # 将2-4加入br-lan 
-# uci add_list network.@device[0].ports='eth2'
-# uci add_list network.@device[0].ports='eth3'
-# uci add_list network.@device[0].ports='eth4'
-# uci commit network
+uci add_list network.@device[0].ports='eth2'
+uci add_list network.@device[0].ports='eth3'
+uci add_list network.@device[0].ports='eth4'
+uci commit network
 
 # 设置wan口的pppoe拨号
-# uci set network.wan=interface
-# uci set network.wan.infname='eth1'
-# uci set network.wan.proto='pppoe'
-# uci set network.wan.username=''
-# uci set network.wan.password=''
-# uci commit network
+uci set network.wan=interface
+uci set network.wan.infname='eth1'
+uci set network.wan.proto='pppoe'
+uci set network.wan.username=''
+uci set network.wan.password=''
+uci commit network
 
 # 设置zerotier和tailscale的接口
 uci set network.zerotier_game=interface
