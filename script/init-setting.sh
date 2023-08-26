@@ -30,7 +30,6 @@ uci commit upnpd
 # 将2-4加入br-lan 
 uci add_list network.@device[0].ports='eth2'
 uci add_list network.@device[0].ports='eth3'
-uci add_list network.@device[0].ports='eth4'
 uci commit network
 
 # 设置wan口的pppoe拨号
