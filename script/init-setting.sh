@@ -30,14 +30,15 @@ uci commit upnpd
 # 将2-4加入br-lan 
 uci add_list network.@device[0].ports='eth2'
 uci add_list network.@device[0].ports='eth3'
+uci add_list network.@device[0].ports='eth4'
 uci commit network
 
 # 设置wan口的pppoe拨号
 uci set network.wan=interface
 uci set network.wan.infname='eth1'
 uci set network.wan.proto='pppoe'
-uci set network.wan.username=''
-uci set network.wan.password=''
+uci set network.wan.username='1'
+uci set network.wan.password='1'
 uci commit network
 
 # 设置zerotier和tailscale的接口
