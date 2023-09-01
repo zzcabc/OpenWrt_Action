@@ -16,7 +16,6 @@ config smartdns
 	option rr_ttl_max '86400'
 	option rr_ttl_reply_max '60'
 	option seconddns_tcp_server '1'
-	option seconddns_force_aaaa_soa '1'
 	option seconddns_enabled '1'
 	option seconddns_no_speed_check '1'
 	option seconddns_no_rule_addr '1'
