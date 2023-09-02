@@ -32,6 +32,7 @@ config smartdns
 	option bind_device '1'
 	option cache_persist '1'
 	option log_level 'debug'
+	option response_mode 'fastest-ip'
 	option old_port '6053'
 	option old_enabled '1'
 	option old_auto_set_dnsmasq '0'
@@ -296,6 +297,7 @@ config server
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option port '53'
 
 config server
 	option enabled '1'
@@ -305,6 +307,7 @@ config server
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option port '53'
 
 config server
 	option enabled '1'
@@ -323,6 +326,7 @@ config server
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option port '853'
 
 config server
 	option enabled '1'
@@ -336,11 +340,11 @@ config server
 config server
 	option enabled '1'
 	option name 'Quad9DNS2'
-	option ip 'https://doh.opendns.com/dns-query'
 	option type 'https'
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option ip 'https://dns11.quad9.net/dns-query'
 
 config server
 	option enabled '1'
@@ -353,47 +357,69 @@ config server
 
 config server
 	option enabled '1'
-	option name 'ONEDNS1'
 	option ip 'https://1.1.1.1/dns-query'
 	option type 'tcp'
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option name 'Cloudflare DNS1'
 
 config server
 	option enabled '1'
-	option name 'ONEDNS2'
 	option ip 'https://1.0.0.1/dns-query'
 	option type 'https'
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option name 'Cloudflare DNS2'
 
 config server
 	option enabled '1'
-	option name 'ONEDNS3'
 	option ip 'https://cloudflare-dns.com/dns-query'
 	option type 'https'
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option name 'Cloudflare DNS3'
 
 config server
 	option enabled '1'
-	option name 'ONEDNS4'
 	option ip '1dot1dot1dot1.cloudflare-dns.com'
 	option type 'tls'
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option port '853'
+	option name 'Cloudflare DNS4'
 
 config server
 	option enabled '1'
-	option name 'ONEDNS5'
 	option ip 'one.one.one.one'
-	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
+	option addition_arg '-exclude-default-group'
+	option port '853'
+	option type 'tls'
+	option exclude_default_group '1'
+	option name 'Cloudflare DNS5'
+
+config server
+	option enabled '1'
+	option name 'Cloudflare DNS6'
+	option ip '1.1.1.1'
+	option port '53'
+	option type 'tcp'
+	option exclude_default_group '1'
+	option server_group 'ocean'
+	option addition_arg '-exclude-default-group'
+
+config server
+	option enabled '1'
+	option ip '1.0.0.1'
+	option port '53'
+	option type 'tcp'
+	option server_group 'ocean'
+	option exclude_default_group '1'
+	option name 'Cloudflare DNS7'
 	option addition_arg '-exclude-default-group'
 
 config server
@@ -411,8 +437,9 @@ config server
 	option ip 'dns.adguard.com'
 	option type 'tls'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option port '853'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -429,8 +456,8 @@ config server
 	option ip 'https://doh.sb/dns-query'
 	option type 'https'
 	option server_group 'ocean'
-	option blacklist_ip '0'
 	option addition_arg '-exclude-default-group'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -440,6 +467,7 @@ config server
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option port '853'
 
 config server
 	option enabled '1'
@@ -449,6 +477,7 @@ config server
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option port '53'
 
 config server
 	option enabled '1'
@@ -458,12 +487,35 @@ config server
 	option server_group 'ocean'
 	option addition_arg '-exclude-default-group'
 	option exclude_default_group '1'
+	option port '53'
+
+config server
+	option enabled '1'
+	option name 'Level3 DNS1'
+	option ip '4.2.2.1'
+	option port '53'
+	option type 'udp'
+	option server_group 'ocean'
+	option exclude_default_group '1'
+	option addition_arg '-exclude-default-group'
+
+config server
+	option enabled '1'
+	option name 'Level3 DNS2'
+	option ip '4.2.2.2'
+	option port '53'
+	option type 'udp'
+	option server_group 'ocean'
+	option exclude_default_group '1'
+	option addition_arg '-exclude-default-group'
 
 config domain-rule
-	option server_group 'cn'
+	option server_group 'ocean'
+	option no_speed_check '1'
 
 config download-file
 	option name 'accelerated-domains.china.conf'
 	option url 'https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf'
 	option type 'list'
+
 
