@@ -37,18 +37,14 @@ uci commit network
 uci set network.wan=interface
 uci set network.wan.infname='eth1'
 uci set network.wan.proto='pppoe'
-uci set network.wan.username='1'
-uci set network.wan.password='1'
+uci set network.wan.username=''
+uci set network.wan.password=''
 uci commit network
 
 # 设置zerotier和tailscale的接口
 uci set network.zerotier_game=interface
 uci set network.zerotier_game.device='zt5u4r3aek'
 uci set network.zerotier_game.proto='dhcp'
-
-uci set network.zerotier_work=interface
-uci set network.zerotier_work.device='ztppisf3lf'
-uci set network.zerotier_work.proto='dhcp'
 
 uci set network.tailscale=interface
 uci set network.tailscale.device='tailscale0'
