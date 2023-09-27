@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  CONFIG_FILE: config/immortalwrt/2305/mt7981.config
+  CONFIG_FILE: config/immortalwrt/2305/mt3000.config
   SOURCE_URL: https://github.com/immortalwrt/immortalwrt
   SOURCE_BRANCH: openwrt-23.05
   DIY1_SH: script/immortalwrt/diy1.sh

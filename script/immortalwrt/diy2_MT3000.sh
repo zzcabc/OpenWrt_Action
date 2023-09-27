@@ -19,11 +19,11 @@ mkdir -p files/etc/openclash/core
 # CLASH_META_URL="https://github.com/vernesong/OpenClash/raw/core/master/meta/clash-linux-amd64.tar.gz"
 
 # d大的普核
-CLASH_DEV_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/latest | grep /clash-linux-arm64 | awk -F '"' '{print $4}')
+CLASH_DEV_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/latest | grep /clash-linux-arm64 | awk -F '"' '{print $4}' | head -n 1)
 # d大的premium核
-CLASH_TUN_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-amd64-2 | awk -F '"' '{print $4}' | head -n 1)
+CLASH_TUN_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-arm64 | awk -F '"' '{print $4}' | head -n 1)
 # meta核
-CLASH_META_URL=$(curl -sL https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/tags/Prerelease-Alpha | grep /clash.meta-linux-arm64-alpha | awk -F '"' '{print $4}')
+CLASH_META_URL=$( curl -sL https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/tags/Prerelease-Alpha | grep /clash.meta-linux-arm64 | awk -F '"' '{print $4}' | head -n 1)
 # 下载clash内核
 # openclash 的 内核解压
 # wget -qO- $CLASH_DEV_URL | tar xOvz > files/etc/openclash/core/clash
