@@ -19,11 +19,11 @@ mkdir -p files/etc/openclash/core
 # CLASH_META_URL="https://github.com/vernesong/OpenClash/raw/core/master/meta/clash-linux-amd64.tar.gz"
 
 # d大的普核
-CLASH_DEV_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/latest | grep /clash-linux-amd64 | awk -F '"' '{print $4}' | head -n 1)
+CLASH_DEV_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/latest | grep /clash-linux-arm64 | awk -F '"' '{print $4}')
 # d大的premium核
 CLASH_TUN_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-amd64-2 | awk -F '"' '{print $4}' | head -n 1)
 # meta核
-CLASH_META_URL=$(curl -sL https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/tags/Prerelease-Alpha | grep /clash.meta-linux-amd64-compatible | awk -F '"' '{print $4}' | head -n 1)
+CLASH_META_URL=$(curl -sL https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/tags/Prerelease-Alpha | grep /clash.meta-linux-arm64-alpha | awk -F '"' '{print $4}')
 # 下载clash内核
 # openclash 的 内核解压
 # wget -qO- $CLASH_DEV_URL | tar xOvz > files/etc/openclash/core/clash
@@ -37,13 +37,13 @@ wget -qO- $CLASH_META_URL | gunzip -c > files/etc/openclash/core/clash_meta
 chmod +x files/etc/openclash/core/clash*
 
 # Country.mmdb
-COUNTRY_LITE_URL=https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/lite/Country.mmdb
+# COUNTRY_LITE_URL=https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/lite/Country.mmdb
 # COUNTRY_FULL_URL=https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb
-wget -qO- $COUNTRY_LITE_URL > files/etc/openclash/Country.mmdb
+# wget -qO- $COUNTRY_LITE_URL > files/etc/openclash/Country.mmdb
 # wget -qO- $COUNTRY_FULL_URL > files/etc/openclash/Country.mmdb
 
 # meta可能要GeoIP.dat 和 GeoSite.dat
-GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
-GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
-wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
-wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
+# GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+# GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+# wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
+# wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
