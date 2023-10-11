@@ -33,9 +33,24 @@ config smartdns
 	option cache_persist '1'
 	option log_level 'debug'
 	option response_mode 'fastest-ip'
+	option seconddns_force_aaaa_soa '1'
 	option old_port '6053'
 	option old_enabled '1'
 	option old_auto_set_dnsmasq '0'
+
+config server
+	option enabled '1'
+	option name '浙江联通DNS1'
+	option ip '221.12.1.227'
+	option type 'udp'
+	option server_group 'cn'
+
+config server
+	option enabled '1'
+	option name '浙江联通DNS2'
+	option ip '221.12.33.227'
+	option type 'udp'
+	option server_group 'cn'
 
 config server
 	option enabled '1'
@@ -517,5 +532,4 @@ config download-file
 	option name 'accelerated-domains.china.conf'
 	option url 'https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf'
 	option type 'list'
-
 

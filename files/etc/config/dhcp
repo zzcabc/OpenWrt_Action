@@ -93,3 +93,9 @@ config host
 	option leasetime 'infinite'
 	option ip '10.0.0.26'
 
+config host
+	option name 'GL-MT3000'
+	option dns '1'
+	option mac '94:83:C4:2C:6E:20'
+	option ip '10.0.0.254'
+	option leasetime 'infinite'
