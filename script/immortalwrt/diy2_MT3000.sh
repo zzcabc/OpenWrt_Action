@@ -23,7 +23,7 @@ mkdir -p files/etc/openclash/core
 # # d大的premium核
 # CLASH_TUN_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-arm64 | awk -F '"' '{print $4}' | head -n 1)
 # # meta核
-# CLASH_META_URL=$( curl -sL https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/tags/Prerelease-Alpha | grep /clash.meta-linux-arm64 | awk -F '"' '{print $4}' | head -n 1)
+CLASH_META_URL=$( curl -sL https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/tags/Prerelease-Alpha | grep /clash.meta-linux-arm64 | awk -F '"' '{print $4}' | head -n 1)
 # # 下载clash内核
 # # openclash 的 内核解压
 # # wget -qO- $CLASH_DEV_URL | tar xOvz > files/etc/openclash/core/clash
@@ -32,9 +32,9 @@ mkdir -p files/etc/openclash/core
 
 # wget -qO- $CLASH_DEV_URL | gunzip -c > files/etc/openclash/core/clash
 # wget -qO- $CLASH_TUN_URL | gunzip -c > files/etc/openclash/core/clash_tun
-# wget -qO- $CLASH_META_URL | gunzip -c > files/etc/openclash/core/clash_meta
+wget -qO- $CLASH_META_URL | gunzip -c > files/etc/openclash/core/clash_meta
 # # 给内核权限
-# chmod +x files/etc/openclash/core/clash*
+chmod +x files/etc/openclash/core/clash*
 
 # Country.mmdb
 # COUNTRY_LITE_URL=https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/lite/Country.mmdb
