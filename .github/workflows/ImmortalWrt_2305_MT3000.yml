@@ -11,7 +11,7 @@ name: Build ImmortalWrt23.05 MT3000
 on:
   repository_dispatch:
   schedule:
-    - cron: "0 16 * * *"
+    - cron: "0 16 * * 0"
   workflow_dispatch:
     inputs:
       ssh:
