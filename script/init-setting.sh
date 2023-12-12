@@ -10,7 +10,7 @@ uci set system.@system[0].zonename=Asia/Shanghai
 
 # 设置日志
 uci set system.@system[0].log_size=5120
-uci set system.@system[0].log_file=/var/log/system.log
+uci set system.@system[0].log_file=/tmp/log/system.log
 uci commit system
 
 # 设置ddns-go为开启状态
@@ -19,6 +19,9 @@ uci commit ddns-go
 
 # 开启upnp
 uci set upnpd.config.enabled=1
+uci set upnpd.config.use_stun='1'
+uci set upnpd.config.stun_host='stun.qq.com'
+uci set upnpd.config.stun_port='3478'
 uci commit upnpd
 
 
@@ -51,7 +54,7 @@ uci set network.tailscale.device='tailscale0'
 uci set network.tailscale.proto='dhcp'
 uci commit network
 
-
+# 设置防火墙默认参数
 uci set firewall.@defaults[0].input=ACCEPT
 uci set firewall.@defaults[0].output=ACCEPT
 uci set firewall.@defaults[0].forward=ACCEPT
@@ -62,7 +65,46 @@ uci set firewall.@defaults[0].fullcone6=1
 uci set firewall.@defaults[0].auto_includes=1
 uci commit firewall
 
+# 设置lan口参数
+uci set firewall.@zone[0].name=lan
+uci set firewall.@zone[0].network='lan utun'
+uci set firewall.@zone[0].input=ACCEPT
+uci set firewall.@zone[0].output=ACCEPT
+uci set firewall.@zone[0].forward=ACCEPT
 
+# 设置wan口参数
+uci set firewall.@zone[1].name=wan
+uci set firewall.@zone[1].input=ACCEPT
+uci set firewall.@zone[1].output=ACCEPT
+uci set firewall.@zone[1].forward=ACCEPT
+uci set firewall.@zone[1].masq='1'
+uci set firewall.@zone[1].mtu_fix='1'
+
+# 设置zerotire和tailscale
+uci set firewall.@zone[2].name=vpn
+uci set firewall.@zone[2].input=ACCEPT
+uci set firewall.@zone[2].output=ACCEPT
+uci set firewall.@zone[2].forward=ACCEPT
+uci add_list firewall.@zone[2].listen_http='tailscale'
+uci add_list firewall.@zone[2].listen_http='zerotier_game'
+uci commit firewall
+
+# 设置 lan 的转发
+uci set firewall.@forwarding[0].src='lan'
+uci set firewall.@forwarding[0].dest='wan'
+uci set firewall.@forwarding[1].src='lan'
+uci set firewall.@forwarding[1].dest='vpn'
+
+uci set firewall.@forwarding[2].src='wan'
+uci set firewall.@forwarding[2].dest='lan'
+uci set firewall.@forwarding[3].src='wan'
+uci set firewall.@forwarding[3].dest='vpn'
+
+uci set firewall.@forwarding[4].src='vpn'
+uci set firewall.@forwarding[4].dest='lan'
+uci set firewall.@forwarding[5].src='vpn'
+uci set firewall.@forwarding[5].dest='wan'
+uci commit firewall
 
 # cat>>/etc/config/firewall<<EOF
 # config zone

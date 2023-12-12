@@ -23,7 +23,7 @@ CLASH_TUN_URL="https://github.com/vernesong/OpenClash/raw/core/master/premium/cl
 # d大的premium核
 # CLASH_TUN_URL=$(curl -sL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-amd64 | awk -F '"' '{print $4}' | head -n 1)
 # meta核
-CLASH_META_URL=$(curl -sL https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/tags/Prerelease-Alpha | grep /clash.meta-linux-amd64-compatible | awk -F '"' '{print $4}' | head -n 1)
+CLASH_META_URL=$(curl -sL https://api.github.com/repos/MetaCubeX/mihomo/releases/tags/Prerelease-Alpha | grep /mihomo-linux-amd64-compatible-alpha | awk -F '"' '{print $4}' | head -n 1)
 # 下载clash内核
 # openclash 的 内核解压
 wget -qO- $CLASH_DEV_URL | tar xOvz > files/etc/openclash/core/clash

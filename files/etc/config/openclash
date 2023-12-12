@@ -121,7 +121,7 @@ config openclash 'config'
 	option yacd_type 'Official'
 	option dashboard_type 'Official'
 	option restart '0'
-	option enable_udp_proxy '0'
+	option enable_udp_proxy '1'
 	option stream_auto_select_openai '1'
 	option stream_auto_select_group_key_openai 'OpenAI|ChatGPT'
 	option enable_unified_delay '1'
@@ -175,9 +175,10 @@ config config_subscribe
 	option rule_provider 'true'
 	option template '0'
 	option udp 'true'
-	option custom_template_url 'https://raw.githubusercontent.com/zzcabc/Rules/master/MyConvert/MyRules_YTOO.ini'
+	option custom_template_url 'https://raw.githubusercontent.com/zzcabc/Rules/master/MyConvert/MyRules_YTOO_Meta.ini'
 	option convert_address 'https://api.stentvessel.top/sub'
 	option address ''
+	option sub_ua 'Clash'
 
 config config_subscribe
 	option enabled '0'
@@ -193,6 +194,7 @@ config config_subscribe
 	option custom_template_url 'https://raw.githubusercontent.com/zzcabc/Rules/master/MyConvert/MyRules_TAG.ini'
 	option convert_address 'https://v.id9.cc/sub'
 	option address ''
+	option sub_ua 'Clash'
 
 config config_subscribe
 	option enabled '0'
@@ -207,7 +209,6 @@ config config_subscribe
 	option udp 'true'
 	option custom_template_url 'https://raw.githubusercontent.com/zzcabc/Rules/master/MyConvert/MyRules_TAG.ini'
 	option convert_address 'https://v.id9.cc/sub'
-	option address ''
 
 config rule_provider_config
 	option enabled '1'
@@ -224,3 +225,4 @@ config game_config
 	list rule_name '极限竞速地平线4'
 	list rule_name '极限竞速地平线5'
 	option group 'GameAndPayPal'
+
