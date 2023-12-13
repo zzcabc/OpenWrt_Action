@@ -19,9 +19,10 @@ uci commit ddns-go
 
 # 开启upnp
 uci set upnpd.config.enabled=1
-uci set upnpd.config.use_stun='1'
-uci set upnpd.config.stun_host='stun.qq.com'
-uci set upnpd.config.stun_port='3478'
+# uci set upnpd.config.use_stun='1'
+# uci set upnpd.config.stun_host='stun.qq.com'
+# uci set upnpd.config.stun_port='3478'
+uci set upnpd.config.external_ip='8.8.4.4'
 uci commit upnpd
 
 
