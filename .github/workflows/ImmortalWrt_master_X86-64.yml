@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build ImmortalWrt23.05 X86_64
+name: Build ImmortalWrt X86_64
 
 on:
   repository_dispatch:
