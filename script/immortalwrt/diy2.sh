@@ -49,7 +49,5 @@ wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
 wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
 
 # 设置更新upnp的脚本
-wget https://github.com/zzcabc/OpenWrt_Action/blob/main/script/update-upnp.sh > files/usr/update-upnp.sh
-wget https://github.com/zzcabc/OpenWrt_Action/blob/main/script/99-customs > files/etc/hotplug.d/iface/99-customs
 chmod +x files/etc/hotplug.d/iface/99-customs
 chmod +x files/usr/update-upnp.sh
