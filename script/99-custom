@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ "$ACTION" = "ifup" ] && [ "$INTERFACE" = "wan" ]; then
+    /usr/update-upnp.sh
+fi

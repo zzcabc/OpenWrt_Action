@@ -47,3 +47,9 @@ GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/downl
 GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
 wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
 wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
+
+# 设置更新upnp的脚本
+wget https://github.com/zzcabc/OpenWrt_Action/blob/main/script/update-upnp.sh > files/usr/update-upnp.sh
+wget https://github.com/zzcabc/OpenWrt_Action/blob/main/script/99-custom files/etc/hotplug.d/iface/99-custom
+chmod +x files/etc/hotplug.d/iface/99-custom
+chmod +x files/usr/update-upnp.sh
