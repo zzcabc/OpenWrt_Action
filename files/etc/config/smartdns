@@ -533,3 +533,7 @@ config download-file
 	option url 'https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf'
 	option type 'list'
 
+config client-rule
+
+config ip-rule
+

@@ -37,14 +37,19 @@ wget -qO- $CLASH_META_URL | gunzip -c > files/etc/openclash/core/clash_meta
 chmod +x files/etc/openclash/core/clash*
 
 # Country.mmdb
-COUNTRY_LITE_URL=https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/lite/Country.mmdb
+# COUNTRY_LITE_URL=https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/lite/Country.mmdb
 # COUNTRY_FULL_URL=https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb
-wget -qO- $COUNTRY_LITE_URL > files/etc/openclash/Country.mmdb
-# wget -qO- $COUNTRY_FULL_URL > files/etc/openclash/Country.mmdb
+COUNTRY_FULL_URL=https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb
+# wget -qO- $COUNTRY_LITE_URL > files/etc/openclash/Country.mmdb
+wget -qO- $COUNTRY_FULL_URL > files/etc/openclash/Country.mmdb
 
 # meta可能要GeoIP.dat 和 GeoSite.dat
-GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
-GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+# GEOIP_URL=https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+# GEOSITE_URL=https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+
+GEOIP_URL=https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
+GEOSITE_URL=https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+
 wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
 wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
 
