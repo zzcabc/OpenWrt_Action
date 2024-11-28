@@ -59,6 +59,34 @@ config ip-rule
 
 config server
 	option enabled '1'
+	option name '浙江联通DNS1'
+	option ip '221.12.1.227'
+	option type 'udp'
+	option server_group 'cn'
+
+config server
+	option enabled '1'
+	option name '浙江联通DNS2'
+	option ip '221.12.33.227'
+	option type 'udp'
+	option server_group 'cn'
+
+config server
+	option enabled '1'
+	option name '浙江联通DNS3'
+	option ip '2408:8888::8'
+	option type 'udp'
+	option server_group 'cn'
+
+config server
+	option enabled '1'
+	option name '浙江联通DNS4'
+	option ip '2408:8899::8'
+	option type 'udp'
+	option server_group 'cn'
+
+config server
+	option enabled '1'
 	option name '114DNS1'
 	option ip '114.114.114.114'
 	option port '53'
@@ -100,30 +128,6 @@ config server
 config server
 	option enabled '1'
 	option name 'AliDNS3'
-	option ip 'https://223.5.5.5/dns-query'
-	option type 'https'
-	option server_group 'cn'
-	option exclude_default_group '1'
-
-config server
-	option enabled '1'
-	option name 'AliDNS4'
-	option ip 'https://223.6.6.6/dns-query'
-	option type 'https'
-	option server_group 'cn'
-	option exclude_default_group '1'
-
-config server
-	option enabled '1'
-	option name 'AliDNS5'
-	option ip 'https://dns.alidns.com/dns-query'
-	option type 'https'
-	option server_group 'cn'
-	option exclude_default_group '1'
-
-config server
-	option enabled '1'
-	option name 'AliDNS6'
 	option ip '[2400:3200::1]'
 	option port '53'
 	option type 'udp'
@@ -133,7 +137,7 @@ config server
 
 config server
 	option enabled '1'
-	option name 'AliDNS7'
+	option name 'AliDNS4'
 	option ip '[2400:3200:baba::1]'
 	option port '53'
 	option type 'udp'
@@ -144,6 +148,22 @@ config server
 config server
 	option enabled '1'
 	option name 'AliDNS5'
+	option ip 'https://223.5.5.5/dns-query'
+	option type 'https'
+	option server_group 'cn'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'AliDNS6'
+	option ip 'https://223.6.6.6/dns-query'
+	option type 'https'
+	option server_group 'cn'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'AliDNS7'
 	option ip 'https://[2400:3200::1]/dns-query'
 	option type 'https'
 	option server_group 'cn'
@@ -151,8 +171,16 @@ config server
 
 config server
 	option enabled '1'
-	option name 'AliDNS5'
+	option name 'AliDNS8'
 	option ip 'https://[2400:3200:baba::1]/dns-query'
+	option type 'https'
+	option server_group 'cn'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'AliDNS8'
+	option ip 'https://dns.alidns.com/dns-query'
 	option type 'https'
 	option server_group 'cn'
 	option exclude_default_group '1'
@@ -200,10 +228,12 @@ config server
 config server
 	option enabled '1'
 	option name 'DNSPod3'
-	option ip 'https://doh.pub/dns-query'
-	option type 'https'
+	option ip '[2402:4e00::]'
+	option port '53'
+	option type 'udp'
 	option server_group 'cn'
 	option exclude_default_group '1'
+	option addition_arg '-bootstrap-dns'
 
 config server
 	option enabled '1'
@@ -216,12 +246,10 @@ config server
 config server
 	option enabled '1'
 	option name 'DNSPod5'
-	option ip '[2402:4e00::]'
-	option port '53'
-	option type 'udp'
+	option ip 'https://doh.pub/dns-query'
+	option type 'https'
 	option server_group 'cn'
 	option exclude_default_group '1'
-	option addition_arg '-bootstrap-dns'
 
 config server
 	option enabled '1'
