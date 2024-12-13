@@ -29,17 +29,20 @@ config smartdns
 	option seconddns_no_dualstack_selection '1'
 	option seconddns_no_cache '1'
 	option seconddns_force_aaaa_soa '1'
+	option proxy_server 'socks5://10.0.0.1:7893'
 	option old_port '6053'
 	option old_enabled '1'
 	option old_auto_set_dnsmasq '0'
 
 config domain-rule
 	option speed_check_mode 'tcp:443,tcp:80,ping'
+	option server_group 'fq_dns'
 
 config client-rule
 	option enabled '0'
 	option dualstack_ip_selection '1'
-	option force_https_soa '1'
+	option force_https_soa '0'
+	option speed_check_mode 'tcp:443,tcp:80,ping'
 
 config ip-rule
 
@@ -137,7 +140,6 @@ config server
 	option type 'tls'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
-	option addition_arg '-no-dualstack-selection -no-speed-check -no-cache -force-aaaa-soa'
 
 config server
 	option enabled '1'
@@ -146,7 +148,14 @@ config server
 	option type 'https'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
-	option addition_arg '-no-dualstack-selection -no-speed-check -no-cache -force-aaaa-soa'
+
+config server
+	option enabled '1'
+	option name 'Google DNS3'
+	option ip '8.8.8.8'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
 
 config server
 	option enabled '1'
@@ -155,7 +164,6 @@ config server
 	option type 'https'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
-	option addition_arg '-no-dualstack-selection -no-speed-check -no-cache -force-aaaa-soa'
 
 config server
 	option enabled '1'
@@ -164,7 +172,6 @@ config server
 	option type 'https'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
-	option addition_arg '-no-dualstack-selection -no-speed-check -no-cache -force-aaaa-soa'
 
 config server
 	option enabled '1'
@@ -174,7 +181,6 @@ config server
 	option type 'tls'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
-	option addition_arg '-no-dualstack-selection -no-speed-check -no-cache -force-aaaa-soa'
 
 config server
 	option enabled '1'
@@ -184,7 +190,6 @@ config server
 	option type 'tls'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
-	option addition_arg '-no-dualstack-selection -no-speed-check -no-cache -force-aaaa-soa'
 
 config server
 	option enabled '1'
@@ -193,5 +198,4 @@ config server
 	option type 'https'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
-	option addition_arg '-no-dualstack-selection -no-speed-check -no-cache -force-aaaa-soa'
 
