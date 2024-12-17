@@ -30,4 +30,4 @@ wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/script/update_
 chmod +x update_tailscale.sh
 ./update_tailscale.sh
 
-tailscale up --accept-dns=false --accept-routes=true --advertise-routes=10.0.0.0/24 --advertise-exit-node=true
+tailscale up --accept-dns=false --accept-routes=true --advertise-exit-node=true --advertise-routes=10.0.0.0/24
