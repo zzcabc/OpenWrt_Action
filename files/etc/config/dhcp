@@ -15,9 +15,10 @@ config dnsmasq
 	option localuse '1'
 	option sequential_ip '1'
 	option allservers '1'
-	option mini_ttl '0'
+	option min_cache_ttl '0'
 	option noresolv '1'
 	option cachesize '0'
+	option nonegcache '1'
 
 config dhcp 'lan'
 	option interface 'lan'
@@ -26,12 +27,12 @@ config dhcp 'lan'
 	option leasetime '6h'
 	option ra_management '1'
 	option ra 'server'
-	list ra_flags 'none'
 	option dhcpv6 'server'
 	option force '1'
 	list dhcp_option '6,10.0.0.1'
 	list dhcp_option '3,10.0.0.1'
 	option ndp 'relay'
+	list ra_flags 'other-config'
 
 config odhcpd 'odhcpd'
 	option maindhcp '0'
@@ -40,18 +41,35 @@ config odhcpd 'odhcpd'
 	option loglevel '4'
 
 config host
-	option name 'XBOX'
-	option dns '1'
-	option mac '3C:FA:06:D2:14:0A'
-	option ip '10.0.0.101'
-	option leasetime 'infinite'
+	option name 'PVE'
+	list mac '34:1A:4C:04:30:6F'
+	option ip '10.0.0.2'
+	option leasetime '3h'
 
 config host
-	option name 'AX5400Pro'
-	option dns '1'
-	option mac '74:6F:88:7F:F4:14'
-	option ip '10.0.0.100'
-	option leasetime 'infinite'
+	option name 'Debian'
+	list mac 'BC:24:11:22:7B:B2'
+	option ip '10.0.0.3'
+	option leasetime '3h'
+
+config host
+	option name 'Debian-local'
+	list mac 'BC:24:11:CC:14:70'
+	option ip '10.0.0.4'
+	option leasetime '3h'
+
+config host
+	option name 'OMV'
+	option ip '10.0.0.5'
+	option leasetime '3h'
+	list mac '26:E0:FC:90:95:BD'
+	list mac '98:6e:e8:22:7a:63'
+
+config host
+	option name 'wangxing'
+	list mac 'BC:24:11:CC:50:23'
+	option ip '10.0.0.6'
+	option leasetime '3h'
 
 config host
 	option name 'Power-OpenWrt'
@@ -94,6 +112,20 @@ config host
 	option mac 'CC:B5:D1:3D:45:A8'
 	option leasetime 'infinite'
 	option ip '10.0.0.26'
+
+config host
+	option name 'AX5400Pro'
+	option dns '1'
+	option mac '74:6F:88:7F:F4:14'
+	option ip '10.0.0.100'
+	option leasetime 'infinite'
+
+config host
+	option name 'XBOX'
+	option dns '1'
+	option mac '3C:FA:06:D2:14:0A'
+	option ip '10.0.0.101'
+	option leasetime 'infinite'
 
 config host
 	option name 'GL-MT3000'

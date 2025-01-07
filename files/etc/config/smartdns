@@ -155,7 +155,13 @@ config server
 	option ip '8.8.8.8'
 	option type 'tcp'
 	option server_group 'fq_dns'
-	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'Google DNS4'
+	option ip '8.8.4.4'
+	option type 'tcp'
+	option server_group 'fq_dns'
 
 config server
 	option enabled '1'
@@ -167,9 +173,41 @@ config server
 
 config server
 	option enabled '1'
+	option name 'IBM Quad9 2'
+	option ip '9.9.9.9'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'IBM Quad9 3'
+	option ip '149.112.112.112'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
 	option name 'OpenDNS'
 	option ip 'https://doh.opendns.com/dns-query'
 	option type 'https'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'OpenDNS 2'
+	option ip '208.67.222.222'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'OpenDNS 3'
+	option ip '208.67.220.220'
+	option type 'tcp'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
 
@@ -195,6 +233,86 @@ config server
 	option enabled '1'
 	option name 'Cloudflare DNS3'
 	option ip 'https://cloudflare-dns.com/dns-query'
+	option type 'https'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'Level3 DNS'
+	option ip '4.2.2.1'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'Level3 DNS 2'
+	option ip '4.2.2.2'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'Yandex DNS1'
+	option ip '77.88.8.8'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'Yandex DNS 2'
+	option ip '77.88.8.1'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'AdGuard DNS 1'
+	option ip '94.140.14.14'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'AdGuard DNS 2'
+	option ip '94.140.15.15'
+	option type 'tcp'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'AdGuard DNS 3'
+	option ip 'https://dns.adguard.com/dns-query'
+	option type 'https'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'AdGuard DNS 4'
+	option ip 'dns.adguard.com'
+	option type 'tls'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'DNS.SB 1'
+	option ip 'https://doh.dns.sb/dns-query'
+	option type 'https'
+	option server_group 'fq_dns'
+	option exclude_default_group '1'
+
+config server
+	option enabled '1'
+	option name 'DNS.SB 2'
+	option ip 'https://doh.sb/dns-query'
 	option type 'https'
 	option server_group 'fq_dns'
 	option exclude_default_group '1'
