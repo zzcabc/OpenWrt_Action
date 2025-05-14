@@ -15,12 +15,12 @@ wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/etc/hotp
 chmod +x 99-update-upnp
 cp 99-update-upnp /etc/hotplug.d/iface/99-update-upnp
 
+wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/etc/hotplug.d/iface/98-update-tailscale
+chmod +x 98-update-tailscale
+cp 98-update-tailscale /etc/hotplug.d/iface/98-update-tailscale
+
 wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/etc/smartdns/custom.conf
 cp custom.conf /etc/smartdns/custom.conf
-
-wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/usr/update-upnp.sh
-chmod +x update-upnp.sh
-cp update-upnp.sh /usr/update-upnp.sh
 
 wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/script/tailscale
 chmod +x tailscale

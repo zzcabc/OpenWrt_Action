@@ -1,5 +1,47 @@
-#!/bin/bash
+#!/bin/sh
+
+# This hotplug script runs when the WAN interface comes up.
+# It automatically gets the public IP and updates miniupnpd's external_ip.
+
+# Use sh for better compatibility on OpenWrt/ImmortalWrt
+# #!/bin/bash
 
 if [ "$ACTION" = "ifup" ] && [ "$INTERFACE" = "wan" ]; then
-    /usr/update-upnp.sh
+    logger -t upnpd-wan-ip "WAN interface ($INTERFACE) is up. Attempting to get public IP for miniupnpd."
+
+    # --- Start of optimized IP retrieval ---
+    # Determine the device used for the default route (which gets the public IP)
+    # This could be pppoe-wan, eth0.2, eth5, etc.
+    WAN_DEVICE=$(ip -o route get 8.8.8.8 | cut -f 5 -d " ")
+
+    if [ -n "$WAN_DEVICE" ]; then
+        logger -t upnpd-wan-ip "Determined WAN device for IP retrieval: $WAN_DEVICE"
+
+        # Get the IPv4 address from the determined device
+        # We look for lines containing 'inet ' and extract the IP part before the '/'
+        PUBLIC_IP=$(curl myip.ipip.net | sed -n 's/当前 IP：\([0-9\.]*\).*/\1/p')
+
+        if [ -n "$PUBLIC_IP" ]; then
+            logger -t upnpd-wan-ip "Public IP detected: $PUBLIC_IP"
+
+            # --- End of optimized IP retrieval ---
+
+            # Use the obtained IP address to set upnpd's external_ip
+            logger -t upnpd-wan-ip "Setting upnpd.config.external_ip to $PUBLIC_IP..."
+            uci set upnpd.config.external_ip="$PUBLIC_IP"
+
+            # Commit the changes
+            uci commit upnpd
+            logger -t upnpd-wan-ip "UCI changes committed."
+
+            # Restart miniupnpd service to pick up the new IP
+            /etc/init.d/miniupnpd restart
+            logger -t upnpd-wan-ip "Restarted miniupnpd service."
+
+        else
+            logger -t upnpd-wan-ip "Could not retrieve public IP from device $WAN_DEVICE. Skipping upnpd update."
+        fi
+    else
+        logger -t upnpd-wan-ip "Could not determine WAN device using 'ip route get 8.8.8.8'. Skipping upnpd update."
+    fi
 fi
