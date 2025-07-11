@@ -6,10 +6,10 @@
 # Check if the action is 'ifup' and the interface is 'wan'
 if [ "$ACTION" = "ifup" ] && [ "$INTERFACE" = "wan" ]; then
 
-    DEVICE=$(uci get network.wan.device)
-    # DEVICE=$(ip -o route get 8.8.8.8 | cut -f 5 -d " ")
+    # DEVICE=$(uci get network.wan.device)
+    DEVICE=$(ip -o route get 8.8.8.8 | cut -f 5 -d " ")
 
-    logger -t ethtool-wan "WAN interface ($INTERFACE) is up on device $DEVICE. Running ethtool..."
+    logger -t "WAN interface ($INTERFACE) is up on device $DEVICE. Running ethtool..."
 
     # The $DEVICE variable provided by the iface hotplug script for
     # the 'wan' interface (including PPPoE) is the underlying
@@ -18,18 +18,18 @@ if [ "$ACTION" = "ifup" ] && [ "$INTERFACE" = "wan" ]; then
 
     # Check if DEVICE variable was provided (should always be for ifup)
     if [ -n "$NETDEV" ]; then
-        logger -t ethtool-wan "Applying ethtool settings to device: $NETDEV"
+        logger -t "Applying ethtool settings to device: $NETDEV"
         # Execute the ethtool command on the underlying device
         ethtool -K "$NETDEV" rx-udp-gro-forwarding on rx-gro-list off
 
         # Optional: Log if the command failed
         if [ $? -ne 0 ]; then
-            logger -t ethtool-wan "ethtool command failed on device $NETDEV. Error code: $?."
+            logger -t "ethtool command failed on device $NETDEV. Error code: $?."
         else
-            logger -t ethtool-wan "ethtool settings applied successfully to device: $NETDEV"
+            logger -t "ethtool settings applied successfully to device: $NETDEV"
         fi
     else
         # This case is very unlikely if hotplug is working correctly
-        logger -t ethtool-wan "Error: DEVICE variable is empty for WAN ifup event! Cannot apply ethtool."
+        logger -t "Error: DEVICE variable is empty for WAN ifup event! Cannot apply ethtool."
     fi
 fi
