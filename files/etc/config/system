@@ -46,3 +46,5 @@ config imm_init
 	option system_chn '1'
 	option opkg_mirror 'https://mirrors.vsean.net/openwrt'
 	option anon_mount '1'
+	option packet_steering '1'
+
