@@ -5,6 +5,9 @@ cp dhcp /etc/config/dhcp
 wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/etc/config/smartdns
 cp smartdns /etc/config/smartdns
 
+wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/etc/smartdns/custom.conf
+cp custom.conf /etc/smartdns/custom.conf
+
 wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/etc/config/system
 cp system /etc/config/system
 
@@ -18,9 +21,6 @@ cp 99-update-upnp /etc/hotplug.d/iface/99-update-upnp
 wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/etc/hotplug.d/iface/98-update-tailscale
 chmod +x 98-update-tailscale
 cp 98-update-tailscale /etc/hotplug.d/iface/98-update-tailscale
-
-wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/files/etc/smartdns/custom.conf
-cp custom.conf /etc/smartdns/custom.conf
 
 wget https://raw.githubusercontent.com/zzcabc/OpenWrt_Action/main/script/tailscale
 chmod +x tailscale

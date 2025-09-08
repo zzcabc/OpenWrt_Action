@@ -19,7 +19,6 @@ config dnsmasq
 	option cachesize '0'
 	option nonegcache '1'
 	option dns_redirect '1'
-	list server '127.0.0.1#7874'
 
 config dhcp 'lan'
 	option interface 'lan'
@@ -49,16 +48,21 @@ config host
 
 config host
 	option name 'Debian'
-	list mac 'BC:24:11:22:7B:B2'
 	option ip '10.0.0.3'
+	option leasetime 'infinite'
+	list mac 'BC:24:11:DB:A7:24'
+
+config host
+	option name 'Win10'
+	list mac 'BC:24:11:1B:43:7A'
+	option ip '10.0.0.4'
 	option leasetime 'infinite'
 
 config host
-	option name 'OMV'
+	option name 'FNOS'
 	option ip '10.0.0.5'
 	option leasetime 'infinite'
-	list mac '26:E0:FC:90:95:BD'
-	list mac '98:6e:e8:22:7a:63'
+	list mac '98:6E:E8:22:7A:63'
 
 config host
 	option name 'MC-SERVER'
@@ -110,9 +114,9 @@ config host
 
 config host
 	option name 'WANGXING'
-	list mac 'BC:24:11:CC:50:23'
 	option ip '10.0.0.29'
 	option leasetime 'infinite'
+	list mac 'BC:24:11:6F:53:0E'
 
 config host
 	option name 'AX5400Pro'
@@ -134,3 +138,4 @@ config host
 	option mac '94:83:C4:2C:6E:20'
 	option ip '10.0.0.254'
 	option leasetime 'infinite'
+
