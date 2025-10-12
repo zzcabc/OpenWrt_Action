@@ -2,7 +2,7 @@
 
 if [ "$ACTION" = "ifup" ] && [ "$INTERFACE" = "wan" ]; then
     PUBLIC_IP=$(curl myip.ipip.net | sed -n 's/当前 IP：\([0-9\.]*\).*/\1/p')
-    uci set upnpd.config.external_ip="$PUBLIC_IP"
-    uci commit upnpd
-    /etc/init.d/miniupnpd restart
+    #uci set upnpd.config.external_ip="$PUBLIC_IP"
+    #uci commit upnpd
+    #/etc/init.d/miniupnpd restart
 fi
