@@ -26,7 +26,7 @@ start_service() {
 
   # Starting with v1.48.1 ENV variable is required to enable use of iptables / nftables.
   # Use nftables by default - can be changed to 'iptables' in tailscale config
-  procd_set_param env TS_DEBUG_FIREWALL_MODE="$fw_mode"
+  procd_set_param env TS_DEBUG_FIREWALL_MODE=nftables
 
   # Set the port to listen on for incoming VPN packets.
   # Remote nodes will automatically be informed about the new port number,
