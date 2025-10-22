@@ -19,6 +19,7 @@ config dnsmasq
 	option cachesize '0'
 	option nonegcache '1'
 	option dns_redirect '1'
+	list server '127.0.0.1#7874'
 
 config dhcp 'lan'
 	option interface 'lan'
@@ -71,50 +72,14 @@ config host
 	option leasetime 'infinite'
 
 config host
-	option name 'Power-OpenWrt'
-	option dns '1'
-	option ip '10.0.0.21'
+	option name 'Debian-Local'
+	list mac 'BC:24:11:1B:AF:37'
+	option ip '10.0.0.7'
 	option leasetime 'infinite'
-	option mac '68:AB:BC:EC:CF:B6'
-
-config host
-	option dns '1'
-	option mac '68:AB:BC:E8:DA:6C'
-	option ip '10.0.0.22'
-	option leasetime 'infinite'
-	option name 'Power-HotWater'
-
-config host
-	option name 'Power-PC'
-	option dns '1'
-	option mac '64:9E:31:9C:4C:70'
-	option ip '10.0.0.23'
-	option leasetime 'infinite'
-
-config host
-	option name 'Power-Ice'
-	option dns '1'
-	option mac '64:9E:31:99:68:0E'
-	option ip '10.0.0.24'
-	option leasetime 'infinite'
-
-config host
-	option name 'Power-Flash'
-	option dns '1'
-	option mac '68:AB:BC:E5:89:3C'
-	option ip '10.0.0.25'
-	option leasetime 'infinite'
-
-config host
-	option name 'Power-Air'
-	option dns '1'
-	option mac 'CC:B5:D1:3D:45:A8'
-	option leasetime 'infinite'
-	option ip '10.0.0.26'
 
 config host
 	option name 'WANGXING'
-	option ip '10.0.0.29'
+	option ip '10.0.0.9'
 	option leasetime 'infinite'
 	list mac 'BC:24:11:6F:53:0E'
 
@@ -122,14 +87,56 @@ config host
 	option name 'AX5400Pro'
 	option dns '1'
 	option mac '74:6F:88:7F:F4:14'
-	option ip '10.0.0.100'
+	option ip '10.0.0.10'
 	option leasetime 'infinite'
+
+config host
+	option name 'Power-OpenWrt'
+	option dns '1'
+	option ip '10.0.0.11'
+	option leasetime 'infinite'
+	option mac '68:AB:BC:EC:CF:B6'
+
+config host
+	option dns '1'
+	option mac '68:AB:BC:E8:DA:6C'
+	option ip '10.0.0.12'
+	option leasetime 'infinite'
+	option name 'Power-HotWater'
+
+config host
+	option name 'Power-PC'
+	option dns '1'
+	option mac '64:9E:31:9C:4C:70'
+	option ip '10.0.0.13'
+	option leasetime 'infinite'
+
+config host
+	option name 'Power-Ice'
+	option dns '1'
+	option mac '64:9E:31:99:68:0E'
+	option ip '10.0.0.14'
+	option leasetime 'infinite'
+
+config host
+	option name 'Power-Flash'
+	option dns '1'
+	option mac '68:AB:BC:E5:89:3C'
+	option ip '10.0.0.15'
+	option leasetime 'infinite'
+
+config host
+	option name 'Power-Air'
+	option dns '1'
+	option mac 'CC:B5:D1:3D:45:A8'
+	option leasetime 'infinite'
+	option ip '10.0.0.16'
 
 config host
 	option name 'XBOX'
 	option dns '1'
 	option mac '3C:FA:06:D2:14:0A'
-	option ip '10.0.0.101'
+	option ip '10.0.0.20'
 	option leasetime 'infinite'
 
 config host
