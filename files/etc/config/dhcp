@@ -51,7 +51,7 @@ config host
 	option name 'Debian'
 	option ip '10.0.0.3'
 	option leasetime 'infinite'
-	list mac 'BC:24:11:DB:A7:24'
+	list mac 'BC:24:11:F2:48:B6'
 
 config host
 	option name 'Win10'
@@ -60,13 +60,13 @@ config host
 	option leasetime 'infinite'
 
 config host
-	option name 'FNOS'
+	option name 'FedoraServer'
 	option ip '10.0.0.5'
 	option leasetime 'infinite'
 	list mac '98:6E:E8:22:7A:63'
 
 config host
-	option name 'MC-SERVER'
+	option name 'McServer'
 	list mac 'B0:41:6F:09:7F:E4'
 	option ip '10.0.0.6'
 	option leasetime 'infinite'

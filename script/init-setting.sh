@@ -14,8 +14,8 @@ uci set system.@system[0].log_file=/tmp/log/system.log
 uci commit system
 
 # 设置ddns-go为开启状态
-uci set ddns-go.config.enabled=1
-uci commit ddns-go
+# uci set ddns-go.config.enabled=1
+# uci commit ddns-go
 
 # 开启upnp
 uci set upnpd.config.enabled=1

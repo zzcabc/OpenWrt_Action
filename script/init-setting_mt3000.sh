@@ -9,13 +9,13 @@ uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
 
 # 设置日志
-uci set system.@system[0].log_size=5120
-uci set system.@system[0].log_file=/var/log/system.log
-uci commit system
+# uci set system.@system[0].log_size=5120
+# uci set system.@system[0].log_file=/var/log/system.log
+# uci commit system
 
 # 设置ddns-go为开启状态
-uci set ddns-go.config.enabled=1
-uci commit ddns-go
+# uci set ddns-go.config.enabled=1
+# uci commit ddns-go
 
 # 开启upnp
 uci set upnpd.config.enabled=1
